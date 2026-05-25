@@ -52,6 +52,17 @@ const GAMES = [
     coverGradient: ['#001A1F', '#003040'],
     stats: { players: 6, sessions: 0 },
   },
+  {
+    id: 'item-admin',
+    title: 'Item Admin',
+    description: 'จัดการรายการตลาด Unturned (sv_market) — ต้องรัน npm run item-admin',
+    emoji: '🛒',
+    screen: 'ItemAdmin',
+    tag: 'NEW',
+    isUse: true,
+    coverGradient: ['#101820', '#16242E'],
+    stats: { players: 0, sessions: 0 },
+  },
 ];
 
 function LivePill() {

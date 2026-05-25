@@ -8,7 +8,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "build:web": "expo export --platform web",
-    "deploy": "expo export --platform web && cp -r public/* dist/ && firebase deploy --only hosting"
+    "deploy": "expo export --platform web && cp -r public/* dist/ && firebase deploy --only hosting",
+    "item-admin": "node item-admin/server.js",
+    "item-admin:install": "npm --prefix item-admin install"
   },
   "dependencies": {
     "@expo/metro-runtime": "~6.1.2",
