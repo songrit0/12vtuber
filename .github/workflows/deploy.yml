@@ -26,3 +26,15 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
           projectId: tuber-tools-266cb
           channelId: live
+
+      - name: Install functions dependencies
+        run: npm --prefix functions install
+
+      - name: Deploy Cloud Functions
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ github.workspace }}/sa.json
+          FIREBASE_SA: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          printf '%s' "$FIREBASE_SA" > "$GOOGLE_APPLICATION_CREDENTIALS"
+          npx firebase-tools@latest deploy --only functions --project tuber-tools-266cb --non-interactive
+          rm -f "$GOOGLE_APPLICATION_CREDENTIALS"
